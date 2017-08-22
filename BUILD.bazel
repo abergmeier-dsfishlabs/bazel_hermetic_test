@@ -1,0 +1,13 @@
+
+load("//:bar.bzl", "bar")
+
+py_binary(
+    name = "foo",
+    srcs = [
+        "foo.py",
+    ],
+)
+
+bar(
+    name = "bar",
+)

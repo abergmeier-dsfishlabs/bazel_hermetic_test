@@ -1,0 +1,19 @@
+
+licenses(["permissive"])
+
+py_runtime(
+    name = "python3_6_2",
+    files = glob([
+        "linux_x86_64/**",
+    ], exclude = [
+        "**/* *",
+    ]),
+    interpreter = "linux_x86_64/bin/python3.6",
+    visibility = ["//visibility:public"],
+)
+
+alias(
+    name = "python3",
+    actual = ":python3_6_2",
+    visibility = ["//visibility:public"],
+)
